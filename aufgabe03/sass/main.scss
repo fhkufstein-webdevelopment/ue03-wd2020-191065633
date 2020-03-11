@@ -11,21 +11,29 @@
 
 .btn {
     /* TODO */
+    transition-property: padding;           /*gibt an was sich ausdehnt*/
+    transition-duration: 300ms;            /*gibt die dauer der ausdehnung an,  wichtig weil langsameres ausdehnen angenehmer für den nutzer ist, zu langsam allerdings ermüdend */
+    transition-delay: 0ms;              /*gibt die verzögerung am Start an des Buttens an,bei null angenehm sonst wirkt die Ausdehnung für den nutzer sehr stockend*/
+    transition-timing-function: linear; /*gibt die geschwindigkeitskurve an linear=gleichmässig*/
 
     &.ease-in {
         /* TODO */
+    transition-timing-function: linear;             /*button 2 hat linere geschwindigkeit*/
     }
 
     &.ease-out {
         /* TODO */
+        transition-timing-function: step-start;         /*button 3 popt schnell auf */
     }
 
     &.ease-in-out {
         /* TODO */
+        transition-timing-function: initial;            /*button 4 popt schneller auf ohne fließenden übergang, aber nicht so schnell wie button 3*/
     }
 
     &.green {
         /* TODO */
+    transition-property: all;   /*alles verändert sich form, farbe*/
     }
 
     &.animation {
@@ -36,7 +44,21 @@
         bottom:auto;
         animation-timing-function: linear;
     }
+    body:hover.myanimation{
+        position: absolute;
+        left:0;
+        top:0;
+         }
+  .myanimation {
+      transition-timing-function: linear;
+      transition-property: margin-right;
+      transition-duration: 5s;
+
+      .myanimation:hover { margin-right: 500px
+      }
+    }
 }
+
 
 body:hover .animation {
     animation-name:myanimation2;
