@@ -1,0 +1,27 @@
+/*a.)*/
+@mixin margin($margin){
+  margin:$margin;
+}
+.beispiel{
+  @include margin(5x);
+}
+.beispiel1{
+  @include margin(5px 10px);
+}
+.beispiel2{
+  @include margin(5px 8px 10px)
+}
+.beispiel3{
+  @include margin(5px 8px 10px 14px);
+}
+
+/*b.)*/
+@mixin breakpoint($width) {
+  width: $width;
+}
+  @media (min-width: 990px) {
+     width: 300px;   }  /*geht es um das angeben von mindestmaßen? */
+
+.mobileInvisible {  display:none;
+
+  @include breakpoint(990px) {   display: block; } }
